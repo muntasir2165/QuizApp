@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         String message = getString(R.string.quiz_feedback, name, points, number_of_questions);
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
+        //the following alert dialog code was obtained from a stackoverflow post
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         // set title
