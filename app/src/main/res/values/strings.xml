@@ -1,0 +1,27 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">QuizApp</string>
+    <string name="grade">Grade</string>
+    <string name="honor_code">I have answered the questions honestly without help from any external resource.</string>
+    <string name="character">char</string>
+    <string name="string">String</string>
+    <string name="integer">int</string>
+    <string name="bool">boolean</string>
+    <string name="question_4">4. Which of the following are primitive data types in Java? Check all that apply.</string>
+    <string name="question_3_hint">Type element name here</string>
+    <string name="question_3">3. The root element of AndroidManifest.xml is:</string>
+    <string name="oreo">Oreo</string>
+    <string name="froyo">Froyo</string>
+    <string name="kitkat">Kitkat</string>
+    <string name="marshmallow">Marshmallow</string>
+    <string name="question_2">2. What is the latest version of Android in the market today?</string>
+    <string name="ruby">Ruby</string>
+    <string name="python">Python</string>
+    <string name="java">Java</string>
+    <string name="c">C</string>
+    <string name="question_1">1. Which programming language is primarily used to program Andriod Apps?</string>
+    <string name="checkbox_unchecked_message">Please select the checkbox above before the quiz can be graded</string>
+    <string name="quiz_feedback"><xliff:g id="name" example="Max">%s</xliff:g> got <xliff:g id="points" example="2">%d</xliff:g> out of <xliff:g id="number_of_questions" example="2">%d</xliff:g> questions correct!</string>
+    <string name="dialog_question">Exit the Quiz App?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
