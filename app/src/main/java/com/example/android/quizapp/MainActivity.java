@@ -24,44 +24,45 @@ public class MainActivity extends AppCompatActivity {
         if (!checkBox.isChecked()) {
             Toast.makeText(this, R.string.checkbox_unchecked_message, Toast.LENGTH_SHORT).show();
             return;
+        } else {
+            int numberOfQuestions = 4;
+            int points = gradeQuestions();
+            EditText nameEditText = (EditText) findViewById(R.id.name);
+            String name = nameEditText.getText().toString();
+            String message = getString(R.string.quiz_feedback, name, points, numberOfQuestions);
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+
+            //the following alert dialog code was obtained from a stackoverflow post
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+
+            // set title
+            alertDialogBuilder.setTitle("");
+
+            // set dialog message
+            alertDialogBuilder
+                    .setMessage(getString(R.string.dialog_question))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // if this button is clicked, close
+                            // current activity
+                            MainActivity.this.finish();
+                        }
+                    })
+                    .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // if this button is clicked, just close
+                            // the dialog box and do nothing
+                            dialog.cancel();
+                        }
+                    });
+
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            // show it
+            alertDialog.show();
         }
-        int number_of_questions = 4;
-        int points = gradeQuestions();
-        EditText nameEditText = (EditText) findViewById(R.id.name);
-        String name = nameEditText.getText().toString();
-        String message = getString(R.string.quiz_feedback, name, points, number_of_questions);
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-
-        //the following alert dialog code was obtained from a stackoverflow post
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
-        // set title
-//        alertDialogBuilder.setTitle("");
-
-        // set dialog message
-        alertDialogBuilder
-                .setMessage(getString(R.string.dialog_question))
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.yes),new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        // if this button is clicked, close
-                        // current activity
-                        MainActivity.this.finish();
-                    }
-                })
-                .setNegativeButton(getString(R.string.no),new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
-                        // if this button is clicked, just close
-                        // the dialog box and do nothing
-                        dialog.cancel();
-                    }
-                });
-
-        // create alert dialog
-        AlertDialog alertDialog = alertDialogBuilder.create();
-
-        // show it
-        alertDialog.show();
     }
 
     private int gradeQuestions() {
